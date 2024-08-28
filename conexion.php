@@ -14,10 +14,14 @@ if ($conn->connect_error) {
 
 // Obtener el dato del formulario
 $nombre = $_POST['nombre'];
-// $apellido = $_POST['apellido'];
+$apellido = $_POST['apellido'];
+$email = $_POST['email'];
+$celular = $_POST['celular'];
+$fecha = $_POST['fecha'];
+$hora = $_POST['hora'];
 
 // Insertar el dato en la base de datos
-$sql = "INSERT INTO citas (nombre) value ('$nombre')";
+$sql = "INSERT INTO citas (nombre, apellido, email, celular, fecha, hora) value ('$nombre', '$apellido', '$email', '$celular', '$fecha', '$hora')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Dato insertado correctamente";
